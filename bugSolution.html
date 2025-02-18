@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text should be visible.
+  </div>
+
+  <script>
+    // Correct way to handle potential errors
+    var div = document.getElementById('myDiv');
+    if (div) {
+        div.innerHTML = 'Modified Text';
+    } else {
+        console.error("Element with ID 'myDiv' not found.");
+    }
+  </script>
+</body>
+</html>
