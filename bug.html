@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text should be visible.
+  </div>
+
+  <script>
+    // Incorrectly using innerHTML to modify non-existent element
+    document.getElementById('nonExistentElement').innerHTML = "This should not cause an error.";
+
+    // Correct way to handle potential errors
+    var div = document.getElementById('myDiv');
+    if (div) {
+        div.innerHTML = 'Modified Text';
+    } else {
+        console.error("Element with ID 'myDiv' not found.");
+    }
+  </script>
+</body>
+</html>
